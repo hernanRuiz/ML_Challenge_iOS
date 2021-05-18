@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  ML_Challenge_iOS
+
+  Created by Hernan Ruiz on 16/05/2021.
+  
+*/
+/*STRINGS*/
+"noResults" = "La búsqueda no produjo\nningún resultado";
+"searchError" = "Se produjo un error.\nVolvé a intentar";
+

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,17 @@
 		902805F9264F36C100573BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 902805F7264F36C100573BF9 /* LaunchScreen.storyboard */; };
 		90280604264F36C100573BF9 /* ML_Challenge_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280603264F36C100573BF9 /* ML_Challenge_iOSTests.swift */; };
 		9028060F264F36C100573BF9 /* ML_Challenge_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028060E264F36C100573BF9 /* ML_Challenge_iOSUITests.swift */; };
+		90280636264F5A6500573BF9 /* MLSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280635264F5A6500573BF9 /* MLSearchViewModel.swift */; };
+		90280641264F5FB400573BF9 /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280640264F5FB400573BF9 /* MyResponse.swift */; };
+		90280647264F617A00573BF9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 90280646264F617A00573BF9 /* Alamofire */; };
+		9028064C264F61AF00573BF9 /* MLApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028064B264F61AF00573BF9 /* MLApi.swift */; };
+		90280651264FA18200573BF9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280650264FA18200573BF9 /* CustomError.swift */; };
+		9028065626505A6900573BF9 /* MLSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028065526505A6900573BF9 /* MLSearchView.swift */; };
+		9028065C265065D800573BF9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028065B265065D800573BF9 /* MainView.swift */; };
+		9067887C2651ED4A0061681D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9067887B2651ED490061681D /* Localizable.strings */; };
+		9067887F265226A30061681D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067887D265226A30061681D /* CustomCell.swift */; };
+		90678880265226A30061681D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9067887E265226A30061681D /* CustomCell.xib */; };
+		90EEA0992653604200A3452A /* MLDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EEA0982653604200A3452A /* MLDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,16 @@
 		9028060A264F36C100573BF9 /* ML_Challenge_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ML_Challenge_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9028060E264F36C100573BF9 /* ML_Challenge_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_Challenge_iOSUITests.swift; sourceTree = "<group>"; };
 		90280610264F36C100573BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90280635264F5A6500573BF9 /* MLSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchViewModel.swift; sourceTree = "<group>"; };
+		90280640264F5FB400573BF9 /* MyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponse.swift; sourceTree = "<group>"; };
+		9028064B264F61AF00573BF9 /* MLApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLApi.swift; sourceTree = "<group>"; };
+		90280650264FA18200573BF9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		9028065526505A6900573BF9 /* MLSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchView.swift; sourceTree = "<group>"; };
+		9028065B265065D800573BF9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9067887B2651ED490061681D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		9067887D265226A30061681D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		9067887E265226A30061681D /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		90EEA0982653604200A3452A /* MLDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90280647264F617A00573BF9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +101,7 @@
 		902805E0264F36BE00573BF9 = {
 			isa = PBXGroup;
 			children = (
+				9067887B2651ED490061681D /* Localizable.strings */,
 				902805EB264F36BE00573BF9 /* ML_Challenge_iOS */,
 				90280602264F36C100573BF9 /* ML_Challenge_iOSTests */,
 				9028060D264F36C100573BF9 /* ML_Challenge_iOSUITests */,
@@ -99,10 +122,16 @@
 		902805EB264F36BE00573BF9 /* ML_Challenge_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				90280631264F5A0200573BF9 /* Api */,
+				90280624264F379500573BF9 /* Search_Screen */,
+				90280623264F375C00573BF9 /* Results_Screen */,
+				90280622264F374000573BF9 /* Details_Screen */,
 				902805EC264F36BE00573BF9 /* AppDelegate.swift */,
 				902805EE264F36BE00573BF9 /* SceneDelegate.swift */,
 				902805F0264F36BE00573BF9 /* ViewController.swift */,
 				902805F2264F36BE00573BF9 /* Main.storyboard */,
+				9067887E265226A30061681D /* CustomCell.xib */,
+				9067887D265226A30061681D /* CustomCell.swift */,
 				902805F5264F36C100573BF9 /* Assets.xcassets */,
 				902805F7264F36C100573BF9 /* LaunchScreen.storyboard */,
 				902805FA264F36C100573BF9 /* Info.plist */,
@@ -128,6 +157,81 @@
 			path = ML_Challenge_iOSUITests;
 			sourceTree = "<group>";
 		};
+		90280622264F374000573BF9 /* Details_Screen */ = {
+			isa = PBXGroup;
+			children = (
+				90EEA0972653601600A3452A /* View */,
+			);
+			path = Details_Screen;
+			sourceTree = "<group>";
+		};
+		90280623264F375C00573BF9 /* Results_Screen */ = {
+			isa = PBXGroup;
+			children = (
+				90280625264F4A3200573BF9 /* Model */,
+				90280626264F4A3B00573BF9 /* View */,
+				90280627264F4A4900573BF9 /* ViewModel */,
+			);
+			path = Results_Screen;
+			sourceTree = "<group>";
+		};
+		90280624264F379500573BF9 /* Search_Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9028065A265065C200573BF9 /* View */,
+			);
+			path = Search_Screen;
+			sourceTree = "<group>";
+		};
+		90280625264F4A3200573BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90280640264F5FB400573BF9 /* MyResponse.swift */,
+				90280650264FA18200573BF9 /* CustomError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90280626264F4A3B00573BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9028065526505A6900573BF9 /* MLSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90280627264F4A4900573BF9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90280635264F5A6500573BF9 /* MLSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90280631264F5A0200573BF9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				9028064B264F61AF00573BF9 /* MLApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		9028065A265065C200573BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9028065B265065D800573BF9 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90EEA0972653601600A3452A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90EEA0982653604200A3452A /* MLDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +248,9 @@
 			dependencies = (
 			);
 			name = ML_Challenge_iOS;
+			packageProductDependencies = (
+				90280646264F617A00573BF9 /* Alamofire */,
+			);
 			productName = ML_Challenge_iOS;
 			productReference = 902805E9264F36BE00573BF9 /* ML_Challenge_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +322,9 @@
 				Base,
 			);
 			mainGroup = 902805E0264F36BE00573BF9;
+			packageReferences = (
+				90280645264F617A00573BF9 /* XCRemoteSwiftPackageReference "alamofire" */,
+			);
 			productRefGroup = 902805EA264F36BE00573BF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +341,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90678880265226A30061681D /* CustomCell.xib in Resources */,
+				9067887C2651ED4A0061681D /* Localizable.strings in Resources */,
 				902805F9264F36C100573BF9 /* LaunchScreen.storyboard in Resources */,
 				902805F6264F36C100573BF9 /* Assets.xcassets in Resources */,
 				902805F4264F36BE00573BF9 /* Main.storyboard in Resources */,
@@ -258,9 +370,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90280651264FA18200573BF9 /* CustomError.swift in Sources */,
+				90EEA0992653604200A3452A /* MLDetailsView.swift in Sources */,
+				9028065C265065D800573BF9 /* MainView.swift in Sources */,
+				9067887F265226A30061681D /* CustomCell.swift in Sources */,
+				90280636264F5A6500573BF9 /* MLSearchViewModel.swift in Sources */,
+				9028064C264F61AF00573BF9 /* MLApi.swift in Sources */,
 				902805F1264F36BE00573BF9 /* ViewController.swift in Sources */,
 				902805ED264F36BE00573BF9 /* AppDelegate.swift in Sources */,
+				90280641264F5FB400573BF9 /* MyResponse.swift in Sources */,
 				902805EF264F36BE00573BF9 /* SceneDelegate.swift in Sources */,
+				9028065626505A6900573BF9 /* MLSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +637,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7782B6NWY6;
 				INFOPLIST_FILE = ML_Challenge_iOSUITests/Info.plist;
@@ -527,6 +649,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hernanruiz.ML-Challenge-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ML_Challenge_iOS;
@@ -537,6 +661,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7782B6NWY6;
 				INFOPLIST_FILE = ML_Challenge_iOSUITests/Info.plist;
@@ -547,6 +673,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hernanruiz.ML-Challenge-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ML_Challenge_iOS;
@@ -593,6 +721,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90280645264F617A00573BF9 /* XCRemoteSwiftPackageReference "alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://github.com/alamofire/alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90280646264F617A00573BF9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90280645264F617A00573BF9 /* XCRemoteSwiftPackageReference "alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 902805E1264F36BE00573BF9 /* Project object */;
 }
