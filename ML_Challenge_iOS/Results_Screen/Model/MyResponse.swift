@@ -15,15 +15,11 @@ class MyResult: Decodable {
     public var seller: Seller
     public var thumbnail: String?
     public var address: Address
-    
-    func MyResult(){
-        
-    }
 }
 
 class Seller: Decodable {
     public var eshop: Eshop?
-    public var seller_reputation: SellerReputation
+    public var seller_reputation: SellerReputation?
 }
 
 class Attributes: Decodable {
@@ -33,13 +29,13 @@ class Attributes: Decodable {
 
 class SellerReputation: Decodable {
     public var power_seller_status: String?
-    public var transactions: SellerTransactions
+    public var transactions: SellerTransactions?
 }
 
 class SellerTransactions: Decodable {
     public var total: Int?
     public var completed: Int?
-    public var cancelled: Int?
+    public var canceled: Int?
 }
 
 class Eshop: Decodable {
@@ -51,7 +47,12 @@ class Address: Decodable {
     public var city_name: String?
 }
 
+class Paging: Decodable {
+    public var total: Int?
+}
+
 class MyResponse: Decodable {
     public var results: [MyResult]?
     public var status: String?
+    public var paging: Paging?
 }

@@ -15,13 +15,13 @@
 		902805F9264F36C100573BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 902805F7264F36C100573BF9 /* LaunchScreen.storyboard */; };
 		90280604264F36C100573BF9 /* ML_Challenge_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280603264F36C100573BF9 /* ML_Challenge_iOSTests.swift */; };
 		9028060F264F36C100573BF9 /* ML_Challenge_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028060E264F36C100573BF9 /* ML_Challenge_iOSUITests.swift */; };
-		90280636264F5A6500573BF9 /* MLSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280635264F5A6500573BF9 /* MLSearchViewModel.swift */; };
+		90280636264F5A6500573BF9 /* MLSearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280635264F5A6500573BF9 /* MLSearchResultsViewModel.swift */; };
 		90280641264F5FB400573BF9 /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280640264F5FB400573BF9 /* MyResponse.swift */; };
 		90280647264F617A00573BF9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 90280646264F617A00573BF9 /* Alamofire */; };
 		9028064C264F61AF00573BF9 /* MLApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028064B264F61AF00573BF9 /* MLApi.swift */; };
 		90280651264FA18200573BF9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90280650264FA18200573BF9 /* CustomError.swift */; };
-		9028065626505A6900573BF9 /* MLSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028065526505A6900573BF9 /* MLSearchView.swift */; };
-		9028065C265065D800573BF9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028065B265065D800573BF9 /* MainView.swift */; };
+		9028065626505A6900573BF9 /* MLSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028065526505A6900573BF9 /* MLSearchResultsView.swift */; };
+		9028065C265065D800573BF9 /* MLSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9028065B265065D800573BF9 /* MLSearchView.swift */; };
 		9067887C2651ED4A0061681D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9067887B2651ED490061681D /* Localizable.strings */; };
 		9067887F265226A30061681D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067887D265226A30061681D /* CustomCell.swift */; };
 		90678880265226A30061681D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9067887E265226A30061681D /* CustomCell.xib */; };
@@ -60,12 +60,12 @@
 		9028060A264F36C100573BF9 /* ML_Challenge_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ML_Challenge_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9028060E264F36C100573BF9 /* ML_Challenge_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_Challenge_iOSUITests.swift; sourceTree = "<group>"; };
 		90280610264F36C100573BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90280635264F5A6500573BF9 /* MLSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchViewModel.swift; sourceTree = "<group>"; };
+		90280635264F5A6500573BF9 /* MLSearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchResultsViewModel.swift; sourceTree = "<group>"; };
 		90280640264F5FB400573BF9 /* MyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponse.swift; sourceTree = "<group>"; };
 		9028064B264F61AF00573BF9 /* MLApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLApi.swift; sourceTree = "<group>"; };
 		90280650264FA18200573BF9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		9028065526505A6900573BF9 /* MLSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchView.swift; sourceTree = "<group>"; };
-		9028065B265065D800573BF9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9028065526505A6900573BF9 /* MLSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchResultsView.swift; sourceTree = "<group>"; };
+		9028065B265065D800573BF9 /* MLSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchView.swift; sourceTree = "<group>"; };
 		9067887B2651ED490061681D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9067887D265226A30061681D /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		9067887E265226A30061681D /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		90280626264F4A3B00573BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9028065526505A6900573BF9 /* MLSearchView.swift */,
+				9028065526505A6900573BF9 /* MLSearchResultsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 		90280627264F4A4900573BF9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				90280635264F5A6500573BF9 /* MLSearchViewModel.swift */,
+				90280635264F5A6500573BF9 /* MLSearchResultsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 		9028065A265065C200573BF9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9028065B265065D800573BF9 /* MainView.swift */,
+				9028065B265065D800573BF9 /* MLSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -372,15 +372,15 @@
 			files = (
 				90280651264FA18200573BF9 /* CustomError.swift in Sources */,
 				90EEA0992653604200A3452A /* MLDetailsView.swift in Sources */,
-				9028065C265065D800573BF9 /* MainView.swift in Sources */,
+				9028065C265065D800573BF9 /* MLSearchView.swift in Sources */,
 				9067887F265226A30061681D /* CustomCell.swift in Sources */,
-				90280636264F5A6500573BF9 /* MLSearchViewModel.swift in Sources */,
+				90280636264F5A6500573BF9 /* MLSearchResultsViewModel.swift in Sources */,
 				9028064C264F61AF00573BF9 /* MLApi.swift in Sources */,
 				902805F1264F36BE00573BF9 /* ViewController.swift in Sources */,
 				902805ED264F36BE00573BF9 /* AppDelegate.swift in Sources */,
 				90280641264F5FB400573BF9 /* MyResponse.swift in Sources */,
 				902805EF264F36BE00573BF9 /* SceneDelegate.swift in Sources */,
-				9028065626505A6900573BF9 /* MLSearchView.swift in Sources */,
+				9028065626505A6900573BF9 /* MLSearchResultsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

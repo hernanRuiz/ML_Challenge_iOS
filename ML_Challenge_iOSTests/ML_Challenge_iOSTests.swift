@@ -9,25 +9,34 @@ import XCTest
 @testable import ML_Challenge_iOS
 
 class ML_Challenge_iOSTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    //La API devuelve una respuesta de error al recibir ciertos símbolos como parámetros de búsqueda
+    func testAPI1() {
+        let viewModel = MLSearchViewModel()
+        viewModel.retrieveResults(param: "´")
+        viewModel.refreshData = { () in
+            let dataArray: [AnyObject] = viewModel.dataArray
+            XCTAssertTrue(dataArray.count == 1) //el array de resultados tiene un solo registro (el error).
         }
     }
-
+    
+    //La API devuelve respuesta sin resultados
+    func testAPI2() {
+        let viewModel = MLSearchViewModel()
+        viewModel.retrieveResults(param: "+")
+        viewModel.refreshData = { () in
+            let dataArray: [AnyObject] = viewModel.dataArray
+            XCTAssertTrue(dataArray.count == 0)
+        }
+    }
+    
+    //Respuesta normal de la API
+    func testAPI3() {
+        let viewModel = MLSearchViewModel()
+        viewModel.retrieveResults(param: "a")
+        viewModel.refreshData = { () in
+            let dataArray: [AnyObject] = viewModel.dataArray
+            XCTAssertTrue(dataArray.count > 1)
+        }
+    }
 }

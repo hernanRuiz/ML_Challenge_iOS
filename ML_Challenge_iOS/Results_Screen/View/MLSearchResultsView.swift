@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import os
 
-class MLSearchView : UIViewController {
+class MLSearchView : UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
@@ -18,6 +18,8 @@ class MLSearchView : UIViewController {
     var viewModel = MLSearchViewModel()
     let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
     @IBOutlet weak var labelError: UILabel!
+    var isLoading = false
+    var isGoingToAppendMoreData = false
     
     override func viewDidLoad(){
         bind()
@@ -46,6 +48,7 @@ class MLSearchView : UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "CustomCell")
         tableView.rowHeight = 150.0
         //Seteamos comportamiento del campo de texto y del botón de búsqueda
+        searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
         let userDefault = UserDefaults.standard
         
@@ -53,7 +56,8 @@ class MLSearchView : UIViewController {
         let savedSearchValue = userDefault.string(forKey: "saved_search_value")
         if let value = savedSearchValue {
             searchTextField.text = value
-            viewModel.retrieveResults(param: value)
+            //se setea límite de 25 registros por llamado a la API
+            viewModel.retrieveResults(param: value + "&limit=25")
             labelError.isHidden = true
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
@@ -68,7 +72,23 @@ class MLSearchView : UIViewController {
             labelError.isHidden = true
             self.tableView.isHidden = true
             self.activityIndicator.startAnimating()
-            viewModel.retrieveResults(param: text)
+            isLoading = true
+            isGoingToAppendMoreData = false
+            //se setea límite de 25 registros por llamado a la API
+            retrieveResults(param: text + "&limit=25")
+        }
+    }
+    
+    private func retrieveResults(param: String){
+        viewModel.retrieveResults(param: param)
+    }
+    
+    private func search(offset: String){
+        if let text = searchTextField.text {
+            isLoading = true
+            isGoingToAppendMoreData = true
+            //offset setea desde que registro en adelante buscar en el próximo llamado a la API
+            retrieveResults(param: text + "&limit=25&offset=" + offset)
         }
     }
     
@@ -88,8 +108,12 @@ class MLSearchView : UIViewController {
                     self?.labelError.isHidden = false
                     self?.labelError.text = "searchError".localized
                 } else {
+                    self?.isLoading = false
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
+                        if self?.isGoingToAppendMoreData == false {
+                            self?.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+                        }
                         self?.tableView.isHidden = false
                     }
                 }
@@ -162,8 +186,20 @@ extension MLSearchView: UITableViewDelegate, UITableViewDataSource {
     
     //Comunicación con la vista de detalles del producto
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "goToDetails", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //Paginado de la tabla
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let userDefault = UserDefaults.standard
+        
+        //Se dispara una búsqueda si recibimos un valor del viewController anterior a este.
+        let totalResultsCount = userDefault.integer(forKey: "total_results_count")
+        let lastElement = viewModel.dataArray.count - 1
+        if !isLoading, indexPath.row == lastElement, viewModel.dataArray.count < totalResultsCount {
+            search(offset: "25")
+        }
     }
     
     //Parámetros que se envían a la vista de Detalles

@@ -48,6 +48,12 @@ class MLApi {
                                         self?.logger.log("ERROR = \(nsError.code),  \(nsError.userInfo.description)")
                                         callback(nsError, nil)
                                     }
+                                } else {
+                                    if let domain = self?.baseUrl {
+                                        let nsError = NSError(domain: domain, code: 0, userInfo: nil)
+                                        self?.logger.log("API_ERROR: EXC_BAD_ACCESS, results y error = nil")
+                                        callback(nsError, nil)
+                                    }
                                 }
                             }
                         } catch let error {
